@@ -10,7 +10,7 @@ export function Header() {
           <Bus className="w-6 h-6 text-white" />
         </div>
         <h1 className="text-xl font-bold font-outfit tracking-tight">
-          MataRoute <span className="text-primary">AI</span>
+          mRai
         </h1>
         <nav className="hidden md:flex items-center ml-8 gap-6 text-sm font-medium text-muted-foreground">
           <a href="#" className="text-white">Workspace</a>

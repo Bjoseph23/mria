@@ -1,6 +1,6 @@
-# MRIA — Matatu Route Intelligence Agent 🚌🇰🇪
+# mRai — Matatu Route Intelligence Agent 🚌🇰🇪
 
-MRIA (Matatu Route Intelligence Agent) is a multi-agent Nairobi transit assistant that fuses official GTFS route data with real-time SMS crowdsourced intelligence from human "routers" on the ground.
+mRai (Matatu Route Intelligence Agent) is a multi-agent Nairobi transit assistant that fuses official GTFS route data with real-time SMS crowdsourced intelligence from human "routers" on the ground.
 
 ### 🌐 Live Demo: [team-project-tracker-7585858596.europe-west2.run.app](https://team-project-tracker-7585858596.europe-west2.run.app/)
 ### 📂 GitHub Repository: [github.com/Bjoseph23/mria](https://github.com/Bjoseph23/mria)
