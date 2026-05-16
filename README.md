@@ -2,8 +2,8 @@
 
 MRIA (Matatu Route Intelligence Agent) is a multi-agent Nairobi transit assistant that fuses official GTFS route data with real-time SMS crowdsourced intelligence from human "routers" on the ground.
 
-### 🌐 Live Demo: [mria-agent.vercel.app](https://mria-agent.vercel.app)
-### 📂 GitHub Repository: [github.com/bjoseph23/MRIA](https://github.com/bjoseph23/MRIA)
+### 🌐 Live Demo: [team-project-tracker-7585858596.europe-west2.run.app](https://team-project-tracker-7585858596.europe-west2.run.app/)
+### 📂 GitHub Repository: [github.com/Bjoseph23/mria](https://github.com/Bjoseph23/mria)
 
 ---
 
@@ -40,8 +40,8 @@ MRIA is built using a hierarchical multi-agent system powered by **Google ADK** 
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/bjoseph23/MRIA.git
-    cd MRIA
+    git clone https://github.com/Bjoseph23/mria.git
+    cd mria
     ```
 
 2.  **Backend Setup:**
