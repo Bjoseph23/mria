@@ -14,12 +14,12 @@ export function ChatInterface() {
       <div className="flex-1 overflow-hidden flex flex-col relative z-10">
         <CopilotChat
           labels={{
-            title: "mRai",
-            initial: "Hujambo! I'm mRai, your Nairobi transit expert. Where are we heading today?",
+            title: "mria",
+            initial: "Hujambo! I'm mria, your Nairobi transit expert. Where are we heading today?",
             placeholder: "Ask follow up or new route...",
           }}
           className="flex-1"
-          instructions="You are mRai, a Nairobi transit expert. Use the provided tools to help users find the best matatu routes. Mix in some Sheng/Swahili where natural."
+          instructions="You are mria, a Nairobi transit expert. Use the provided tools to help users find the best matatu routes. Mix in some Sheng/Swahili where natural."
           renderMessage={(props) => <A2UIMessageRenderer {...props} />}
         />
       </div>

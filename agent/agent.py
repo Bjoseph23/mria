@@ -10,9 +10,9 @@ from agent.sub_agents.crowd_gatherer import crowd_gatherer_agent
 from agent.tools.cache_tool import check_cache, write_cache
 
 root_agent = Agent(
-    name="mRaiOrchestrator",
+    name="mriaOrchestrator",
     model="gemini-2.5-pro",
-    instruction="""You are mRai (Matatu Route Intelligence Agent), Nairobi's smartest matatu route assistant.
+    instruction="""You are mria (Matatu Route Intelligence Agent), Nairobi's smartest matatu route assistant.
 
 You help commuters navigate Nairobi's matatu network by combining:
 1. Official GTFS route data (matatu numbers, stops, schedules)
@@ -46,7 +46,7 @@ Use natural Nairobi language — mix in Swahili/Sheng where appropriate (e.g., "
 "mat", "jam mbaya", "fare ni"). Keep the overall response accessible.
 
 FOR NON-ROUTE QUERIES:
-- Greetings: Respond warmly in Sheng/English. Introduce yourself as mRai.
+- Greetings: Respond warmly in Sheng/English. Introduce yourself as mria.
 - General Nairobi questions: Help with what you know.
 - Off-topic: Politely redirect to matatu route assistance.
 

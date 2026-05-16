@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
-  title: "mRai — Matatu Route Intelligence Agent",
+  title: "mria — Matatu Route Intelligence Agent",
   description: "Nairobi's smartest matatu route assistant with real-time crowd intelligence.",
   manifest: "/manifest.json",
   themeColor: "#000000",
