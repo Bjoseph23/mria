@@ -1,7 +1,7 @@
 "use client";
 
 import { useCopilotChat } from "@copilotkit/react-core";
-import { A2uiSurface } from "@a2ui/react";
+import { Surface } from "@a2ui/react";
 
 export function A2UIMessageRenderer({ message }: { message: any }) {
   const { surfaces } = useCopilotChat();
@@ -16,7 +16,7 @@ export function A2UIMessageRenderer({ message }: { message: any }) {
       {surfaces
         .filter((s) => s.messageId === message.id)
         .map((surface) => (
-          <A2uiSurface key={surface.id} surface={surface} />
+          <Surface key={surface.id} surface={surface} />
         ))}
     </div>
   );
