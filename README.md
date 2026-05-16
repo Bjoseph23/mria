@@ -2,7 +2,12 @@
 
 MRIA (Matatu Route Intelligence Agent) is a multi-agent Nairobi transit assistant that fuses official GTFS route data with real-time SMS crowdsourced intelligence from human "routers" on the ground.
 
-![MRIA UI Mockup](https://images.unsplash.com/photo-1598124838120-009d5c411ca7?q=80&w=1200&auto=format&fit=crop)
+### 🌐 Live Demo: [mria-agent.vercel.app](https://mria-agent.vercel.app)
+### 📂 GitHub Repository: [github.com/bjoseph23/MRIA](https://github.com/bjoseph23/MRIA)
+
+---
+
+![MRIA UI Interface](./public/screenshots/mria_interface.png)
 
 ## 🌟 The Problem
 Navigating Nairobi's matatu network is notoriously difficult for both locals and visitors. While canonical routes exist (Digital Matatus GTFS), real-time conditions like traffic jams ("jam mbaya"), police checks, and matatu shortages frequently make "official" data obsolete. Commuters often rely on word-of-mouth or Twitter (X) reports, which are fragmented and hard to synthesize while on the move.
@@ -35,8 +40,8 @@ MRIA is built using a hierarchical multi-agent system powered by **Google ADK** 
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/mria.git
-    cd mria
+    git clone https://github.com/bjoseph23/MRIA.git
+    cd MRIA
     ```
 
 2.  **Backend Setup:**
@@ -61,10 +66,6 @@ MRIA is built using a hierarchical multi-agent system powered by **Google ADK** 
     npm install
     npm run dev
     ```
-
-## 📱 Interaction
-*   **Web UI:** Access the premium PWA interface at `http://localhost:3000`.
-*   **SMS:** Routers can reply to broadcasted queries via SMS, which MRIA ingests via webhooks.
 
 ## 🛠 Technology Stack
 *   **Frontend:** Next.js 15 (App Router), CopilotKit, Tailwind CSS, shadcn/ui.
