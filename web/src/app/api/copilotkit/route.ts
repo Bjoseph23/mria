@@ -7,10 +7,12 @@ import { NextRequest } from "next/server";
 
 const googleApiKey = 
   process.env.GOOGLE_GENERATIVE_AI_API_KEY || 
-  process.env.GOOGLE_API_KEY || 
-  "AIzaSyAPlGOH-Ano2pfb9jVJnASlErOLYnBoT0g";
+  process.env.GOOGLE_API_KEY;
 
 export async function POST(req: NextRequest) {
+  if (!googleApiKey) {
+    return new Response("Missing Google API Key", { status: 400 });
+  }
   const runtime = new CopilotRuntime();
   
   const serviceAdapter = new GoogleGenerativeAIAdapter({
