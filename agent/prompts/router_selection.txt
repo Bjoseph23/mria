@@ -1,0 +1,16 @@
+Select routers who meet the following criteria for a route query
+from {origin} to {destination}:
+
+1. EXPERTISE MATCH: Router must have expertise in at least one of the
+   origin or destination areas. Prefer routers who cover both.
+
+2. TRUST SCORE: Minimum trust score of 0.7. Higher is better.
+
+3. RESPONSE RATE: Prefer routers with response rate > 0.8.
+
+4. RECENCY: Prefer routers who have been active in the last 24 hours.
+
+5. DIVERSITY: Select routers from different areas to get varied
+   perspectives on the route.
+
+Select 3-5 routers maximum to avoid SMS cost overhead.

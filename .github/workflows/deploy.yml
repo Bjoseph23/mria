@@ -1,0 +1,61 @@
+name: Build and Deploy to Cloud Run
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: europe-west1
+  API_SERVICE: mria-api
+  WEB_SERVICE: mria-web
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Google Auth
+      uses: 'google-github-actions/auth@v2'
+      with:
+        credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+    - name: Set up Cloud SDK
+      uses: 'google-github-actions/setup-gcloud@v2'
+
+    - name: Authorize Docker
+      run: gcloud auth configure-docker europe-west1-docker.pkg.dev
+
+    - name: Build and Push API
+      run: |
+        docker build -t europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/mria/api:${{ github.sha }} -f Dockerfile.api .
+        docker push europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/mria/api:${{ github.sha }}
+
+    - name: Deploy API to Cloud Run
+      run: |
+        gcloud run deploy ${{ env.API_SERVICE }} \
+          --image europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/mria/api:${{ github.sha }} \
+          --region ${{ env.REGION }} \
+          --platform managed \
+          --allow-unauthenticated \
+          --set-env-vars GOOGLE_API_KEY=${{ secrets.GOOGLE_API_KEY }},AT_API_KEY=${{ secrets.AT_API_KEY }}
+
+    - name: Build and Push Web
+    # Note: We need the API URL for the frontend build
+      run: |
+        docker build -t europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/mria/web:${{ github.sha }} -f Dockerfile.web .
+        docker push europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/mria/web:${{ github.sha }}
+
+    - name: Deploy Web to Cloud Run
+      run: |
+        gcloud run deploy ${{ env.WEB_SERVICE }} \
+          --image europe-west1-docker.pkg.dev/${{ env.PROJECT_ID }}/mria/web:${{ github.sha }} \
+          --region ${{ env.REGION }} \
+          --platform managed \
+          --allow-unauthenticated
