@@ -5,7 +5,10 @@ import {
 } from "@copilotkit/runtime";
 import { NextRequest } from "next/server";
 
-const googleApiKey = process.env.GOOGLE_API_KEY || "AIzaSyAPlGOH-Ano2pfb9jVJnASlErOLYnBoT0g";
+const googleApiKey = 
+  process.env.GOOGLE_GENERATIVE_AI_API_KEY || 
+  process.env.GOOGLE_API_KEY || 
+  "AIzaSyAPlGOH-Ano2pfb9jVJnASlErOLYnBoT0g";
 
 export async function POST(req: NextRequest) {
   const runtime = new CopilotRuntime();
